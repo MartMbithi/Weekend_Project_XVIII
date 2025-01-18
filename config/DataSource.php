@@ -1,7 +1,9 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
  *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
@@ -64,7 +66,6 @@
  */
 
 
-
 /* Only Use This Configuration File When You Are  Consuming Bulk Import API End Points*/
 
 namespace Devlan;
@@ -83,11 +84,11 @@ class DataSource
     // when using above 7.1.0, declare the below constants as private
     const HOST = 'localhost';
 
-    const USERNAME = 'iazxgdzb_admin';
+    const USERNAME = 'root';
 
-    const PASSWORD = '20Devlan@';
+    const PASSWORD = '';
 
-    const DATABASENAME = 'iazxgdzb_dasati_pos';
+    const DATABASENAME = 'pharmacy_management_system';
 
     private $conn;
 

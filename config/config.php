@@ -1,7 +1,9 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
  *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
@@ -63,12 +65,11 @@
  *
  */
 
-
 /* Procedural Database Connecrions */
-$dbuser = "iazxgdzb_admin"; /* Database Username */
-$dbpass = "20Devlan@"; /* Database Username Password */
+$dbuser = "root"; /* Database Username */
+$dbpass = ""; /* Database Username Password */
 $host = "localhost"; /* Database Host */
-$db = "iazxgdzb_dasati_pos";  /* Database Name */
+$db = "pharmacy_management_system";  /* Database Name */
 $mysqli = new mysqli($host, $dbuser, $dbpass, $db); /* Connection Function */
 
 /* Get Set Timezones */
@@ -83,4 +84,3 @@ while ($timezone_settings = $timezones_res->fetch_object()) {
 
     global $timezone, $timezone_offset;
 }
-
