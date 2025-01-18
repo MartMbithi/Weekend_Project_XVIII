@@ -58,3 +58,10 @@ Push to the branch:
 
     Create a pull request detailing your changes.
 
+
+# Test Account Creds
+For initial set up, you can use these login credentials:
+
+    Admin : email: admin@pms.com password: demo
+    Manager (Doctor) : email: manager@pms.com password: demo
+    Staff (Pharmacist) : email: staff@pms.com password: demo
