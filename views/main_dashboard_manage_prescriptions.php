@@ -216,7 +216,6 @@ require_once('../partials/head.php')
                                                         <tr>
                                                             <th>Patient</th>
                                                             <th>Doctor</th>
-                                                            <th>Precription</th>
                                                             <th>Date</th>
                                                             <th>Manage</th>
                                                         </tr>
@@ -240,9 +239,9 @@ require_once('../partials/head.php')
                                                                     Email: <?php echo $prescriptions->user_email; ?> <br>
                                                                     Phone: <?php echo $prescriptions->user_phoneno; ?>
                                                                 </td>
-                                                                <td><?php echo $prescriptions->pres_details; ?></td>
                                                                 <td><?php echo date('d M Y g:ia', strtotime($prescriptions->pres_date)); ?></td>
                                                                 <td>
+                                                                    <a data-toggle="modal" href="#view_<?php echo $prescriptions->pres_id; ?>" class="badge badge-dim badge-pill badge-outline-success"><em class="icon ni ni-eye"></em> View</a>
                                                                     <a data-toggle="modal" href="#update_<?php echo $prescriptions->pres_id; ?>" class="badge badge-dim badge-pill badge-outline-warning"><em class="icon ni ni-edit"></em> Edit</a>
                                                                     <a data-toggle="modal" href="#delete_<?php echo $prescriptions->pres_id; ?>" class="badge badge-dim badge-pill badge-outline-danger"><em class="icon ni ni-trash-fill"></em> Delete</a>
                                                                 </td>

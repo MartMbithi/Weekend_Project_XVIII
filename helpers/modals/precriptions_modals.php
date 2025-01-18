@@ -1,3 +1,29 @@
+<!-- View Modal -->
+<div class="modal fade" id="view_<?php echo $prescriptions->pres_id; ?>">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Prescription Details</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>Patient Name:</strong> <?php echo $prescriptions->pres_patient_name; ?><br>
+                    <strong>Patient Email:</strong> <?php echo $prescriptions->pres_patient_email; ?><br>
+                    <strong>Patient Phone:</strong> <?php echo $prescriptions->pres_patient_phoneno; ?><br>
+                    <strong>Prescription:</strong> <?php echo $prescriptions->pres_details; ?><br>
+                    <strong>Prescription Date:</strong> <?php echo $prescriptions->pres_date; ?><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+
+
 <!-- Udpate Modal -->
 <div class="modal fade" id="update_<?php echo $prescriptions->pres_id; ?>">
     <div class="modal-dialog  modal-lg">
