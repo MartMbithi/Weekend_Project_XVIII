@@ -44,7 +44,7 @@
                         <div class="form-group col-md-12">
                             <label>Patient Name</label>
                             <input type="text" name="pres_patient_name" value="<?php echo $prescriptions->pres_patient_name; ?>" required class="form-control">
-                            <input type="text" name="pres_id" value="<?php echo $prescriptions->pres_id; ?>" required class="form-control">
+                            <input type="hidden" name="pres_id" value="<?php echo $prescriptions->pres_id; ?>" required class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Patient Email Address</label>

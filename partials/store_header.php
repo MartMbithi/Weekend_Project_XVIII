@@ -117,7 +117,7 @@ while ($settings = $res->fetch_object()) {
                             </a>
                         </li>
                         <li class="nk-menu-item">
-                            <a href="store_dashboard?view=<?php echo $view; ?>" class="nk-menu-link">
+                            <a href="store_prescriptions?view=<?php echo $view; ?>" class="nk-menu-link">
                                 <span class="nk-menu-text"> Prescriptions</span>
                             </a>
                         </li>
