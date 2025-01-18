@@ -16,6 +16,10 @@
                     <strong>Prescription:</strong> <?php echo $prescriptions->pres_details; ?><br>
                     <strong>Prescription Date:</strong> <?php echo $prescriptions->pres_date; ?><br>
                 </p>
+                <!-- Add Print Button -->
+                <div class="text-right">
+                    <a href="print_prescription?print=<?php echo $prescriptions->pres_id; ?>" class="btn btn-primary"><em class="icon ni ni-printer"></em> Print</a>
+                </div>
             </div>
         </div>
     </div>
