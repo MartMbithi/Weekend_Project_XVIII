@@ -113,7 +113,7 @@ require_once('../partials/head.php');
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <label class="form-label" for="password">Password</label>
-                                    <a class="link link-primary link-sm" tabindex="-1" href="reset_password">Forgot Password</a>
+                                    <!-- <a class="link link-primary link-sm" tabindex="-1" href="reset_password">Forgot Password</a> Enable This On Pro Versions-->
                                 </div>
                                 <div class="form-control-wrap">
                                     <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
@@ -134,9 +134,6 @@ require_once('../partials/head.php');
                         <div class="slider-init">
                             <div class="slider-item">
                                 <div class="nk-feature nk-feature-center">
-                                    <!--<div class="nk-feature-img">
-                                        <img class="round" src="https://nativebeecare.co.ke/assets/img/logo/logo-dark.png" alt="">
-                                    </div> -->
                                     <div class="nk-feature-content py-4 p-sm-5">
                                         <h4><?php echo $settings->system_name; ?></h4>
                                         <p><?php echo $settings->system_tagline; ?></p>
