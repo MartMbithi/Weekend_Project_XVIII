@@ -107,9 +107,9 @@ while ($settings = $res->fetch_object()) {
                                 <span class="nk-menu-text">Items & Products</span>
                             </a>
                             <ul class="nk-menu-sub">
-                                <li class="nk-menu-item">
+                                <!-- <li class="nk-menu-item">
                                     <a href="main_dashboard_import_items" class="nk-menu-link"><span class="nk-menu-text">Bulk Import</span></a>
-                                </li>
+                                </li> -->
                                 <li class="nk-menu-item">
                                     <a href="main_dashboard_manage_items" class="nk-menu-link"><span class="nk-menu-text">Manage Products</span></a>
                                 </li>
@@ -132,9 +132,9 @@ while ($settings = $res->fetch_object()) {
                                 <span class="nk-menu-text">Workforce</span>
                             </a>
                             <ul class="nk-menu-sub">
-                                <li class="nk-menu-item">
+                               <!--  <li class="nk-menu-item">
                                     <a href="main_dashboard_import_staff" class="nk-menu-link"><span class="nk-menu-text">Bulk Import</span></a>
-                                </li>
+                                </li> -->
                                 <li class="nk-menu-item">
                                     <a href="main_dashboard_manage_staffs" class="nk-menu-link"><span class="nk-menu-text">Manage Staffs</span></a>
                                 </li>
@@ -239,9 +239,9 @@ while ($settings = $res->fetch_object()) {
                                     <li class="nk-menu-item">
                                         <a href="main_dashboard_settings_customizations" class="nk-menu-link"><span class="nk-menu-text">Customizations</span></a>
                                     </li>
-                                    <li class="nk-menu-item">
+                                    <!-- <li class="nk-menu-item">
                                         <a href="main_dashboard_settings_mailer" class="nk-menu-link"><span class="nk-menu-text">STMP Mailer Settings</span></a>
-                                    </li>
+                                    </li> -->
                                     <li class="nk-menu-item">
                                         <a href="main_dashboard_settings_backups" class="nk-menu-link"><span class="nk-menu-text">Database Backups</span></a>
                                     </li>
