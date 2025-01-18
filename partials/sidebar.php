@@ -135,9 +135,9 @@ while ($settings = $res->fetch_object()) {
                             </ul><!-- .nk-menu-sub -->
                         </li><!-- .nk-menu-item -->
                         <li class="nk-menu-item">
-                            <a href="main_dashboard_manage_vouchers" class="nk-menu-link">
+                            <a href="main_dashboard_manage_prescriptions" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-cc-new"></em></span>
-                                <span class="nk-menu-text">Vouchers</span>
+                                <span class="nk-menu-text">Prescriptions</span>
                             </a>
                         </li><!-- .nk-menu-item -->
                         <li class="nk-menu-item">
