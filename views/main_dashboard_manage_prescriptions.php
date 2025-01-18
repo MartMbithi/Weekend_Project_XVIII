@@ -146,10 +146,11 @@ require_once('../partials/head.php')
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Manage Users</h3>
+                                            <h3 class="nk-block-title page-title">Manage Patient Prescriptions</h3>
                                             <div class="nk-block-des text-soft">
                                                 <p>
-                                                    This module allows you to register, update and delete users <br>
+                                                    This module allows you to register, update and delete patient prescriptions
+                                                    <br>
                                                 </p>
                                             </div>
                                         </div><!-- .nk-block-head-content -->
@@ -158,7 +159,7 @@ require_once('../partials/head.php')
                                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                                 <div class="toggle-expand-content" data-content="pageMenu">
                                                     <ul class="nk-block-tools g-3">
-                                                        <li><a href="#create_store" data-toggle="modal" class="btn btn-white btn-outline-light"><em class="icon ni ni-user-add"></em><span>Add New Staff</span></a></li>
+                                                        <li><a href="#create_store" data-toggle="modal" class="btn btn-white btn-outline-light"><em class="icon ni ni-user-add"></em><span>Add New Prescription</span></a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- .toggle-wrap -->
@@ -178,60 +179,26 @@ require_once('../partials/head.php')
                                             <div class="modal-body">
                                                 <form method="post" enctype="multipart/form-data">
                                                     <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label>Name</label>
-                                                            <input type="text" name="user_name" required class="form-control">
+                                                        <div class="form-group col-md-12">
+                                                            <label>Patient Name</label>
+                                                            <input type="text" name="pres_patient_name" required class="form-control">
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label>Email Address</label>
-                                                            <input type="email" name="user_email" required class="form-control">
+                                                            <label>Patient Email Address</label>
+                                                            <input type="email" name="pres_patient_email" required class="form-control">
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label>Phone Number</label>
-                                                            <input type="text" name="user_phoneno" required class="form-control">
+                                                            <label>Patient Phone Number</label>
+                                                            <input type="text" name="pres_patient_phoneno" required class="form-control">
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>Password</label>
-                                                            <input type="text" name="user_password" value="<?php echo $defaultPass; ?>" required class="form-control">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label" for="default-06">Allocated Store</label>
-                                                            <div class="form-control-wrap">
-                                                                <div class="form-group">
-                                                                    <div class="form-control-wrap">
-                                                                        <select name="user_store_id" class="form-select form-control form-control-lg" data-search="on">
-                                                                            <?php
-                                                                            $raw_results = mysqli_query($mysqli, "SELECT * FROM store_settings WHERE store_status = 'active'");
-                                                                            if (mysqli_num_rows($raw_results) > 0) {
-                                                                                while ($stores = mysqli_fetch_array($raw_results)) {
-                                                                            ?>
-                                                                                    <option value="<?php echo $stores['store_id']; ?>"><?php echo $stores['store_name']; ?></option>
-                                                                            <?php }
-                                                                            }
-                                                                            ?>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label" for="default-06">User Access Level</label>
-                                                            <div class="form-control-wrap">
-                                                                <div class="form-group">
-                                                                    <div class="form-control-wrap">
-                                                                        <select name="user_access_level" class="form-select form-control form-control-lg" data-search="on">
-                                                                            <option value="Staff">Staff</option>
-                                                                            <option value="Manager">Manager</option>
-                                                                            <option value="Admin">Administrator</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>Prescription</label>
+                                                            <textarea type="text" name="pres_details" required class="form-control"></textarea>
                                                         </div>
                                                     </div><br><br>
                                                     <div class="text-right">
-                                                        <button name="add_user" class="btn btn-primary" type="submit">
-                                                            <em class="icon ni ni-user-add"></em> Register User
+                                                        <button name="Add_Prescription" class="btn btn-primary" type="submit">
+                                                            <em class="icon ni ni-user-add"></em> Save
                                                         </button>
                                                     </div>
                                                 </form>
@@ -247,36 +214,40 @@ require_once('../partials/head.php')
                                                 <table class="datatable-init table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Full Name</th>
-                                                            <th>Email</th>
-                                                            <th>Phone Number</th>
-                                                            <th>Access Level</th>
-                                                            <th>Assigned Store</th>
+                                                            <th>Patient</th>
+                                                            <th>Doctor</th>
+                                                            <th>Precription</th>
+                                                            <th>Date</th>
                                                             <th>Manage</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php
                                                         $user_id = $_SESSION['user_id'];
-                                                        $ret = "SELECT * FROM users us INNER JOIN store_settings st ON st.store_id = us.user_store_id 
-                                                        WHERE us.user_status ='active'  && us.user_id != '$user_id'";
+                                                        $ret = "SELECT * FROM prescriptions p INNER JOIN users u ON u.user_id = p.pres_doctor_id ";
                                                         $stmt = $mysqli->prepare($ret);
                                                         $stmt->execute(); //ok
                                                         $res = $stmt->get_result();
-                                                        while ($users = $res->fetch_object()) { ?>
+                                                        while ($prescriptions = $res->fetch_object()) { ?>
                                                             <tr>
-                                                                <td><?php echo $users->user_name; ?></td>
-                                                                <td><?php echo $users->user_email; ?></td>
-                                                                <td><?php echo $users->user_phoneno; ?></td>
-                                                                <td><?php echo $users->user_access_level; ?></td>
-                                                                <td><?php echo $users->store_name; ?></td>
                                                                 <td>
-                                                                    <a data-toggle="modal" href="#update_<?php echo $users->user_id; ?>" class="badge badge-dim badge-pill badge-outline-warning"><em class="icon ni ni-edit"></em> Edit</a>
-                                                                    <a data-toggle="modal" href="#change_password_<?php echo $users->user_id; ?>" class="badge badge-dim badge-pill badge-outline-danger"><em class="icon ni ni-lock"></em> Change Password</a>
-                                                                    <a data-toggle="modal" href="#delete_<?php echo $users->user_id; ?>" class="badge badge-dim badge-pill badge-outline-danger"><em class="icon ni ni-trash-fill"></em> Delete</a>
+                                                                    Name: <?php echo $prescriptions->pres_patient_name; ?> <br>
+                                                                    Email: <?php echo $prescriptions->pres_patient_email; ?> <br>
+                                                                    Phone: <?php echo $prescriptions->pres_patient_phoneno; ?>
+                                                                </td>
+                                                                <td>
+                                                                    Name: <?php echo $prescriptions->user_name; ?> <br>
+                                                                    Email: <?php echo $prescriptions->user_email; ?> <br>
+                                                                    Phone: <?php echo $prescriptions->user_phoneno; ?>
+                                                                </td>
+                                                                <td><?php echo $prescriptions->pres_details; ?></td>
+                                                                <td><?php echo date('d M Y g:ia', strtotime($prescriptions->pres_date)); ?></td>
+                                                                <td>
+                                                                    <a data-toggle="modal" href="#update_<?php echo $prescriptions->pres_id; ?>" class="badge badge-dim badge-pill badge-outline-warning"><em class="icon ni ni-edit"></em> Edit</a>
+                                                                    <a data-toggle="modal" href="#delete_<?php echo $prescriptions->pres_id; ?>" class="badge badge-dim badge-pill badge-outline-danger"><em class="icon ni ni-trash-fill"></em> Delete</a>
                                                                 </td>
                                                             </tr>
-                                                        <?php include('../helpers/modals/staff_modals.php');
+                                                        <?php include('../helpers/modals/precriptions_modals.php');
                                                         }
                                                         ?>
                                                     </tbody>
