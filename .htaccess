@@ -1,0 +1,33 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect requests to PHP files if the filename or directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# PHP Configuration settings
+<IfModule mod_php>
+  php_flag display_errors Off
+  php_value upload_max_filesize 200M
+  php_value post_max_size 200M
+  php_value max_input_time 300
+  php_value max_execution_time 300
+</IfModule>
+
+# Set timezone for scripts to Africa/Nairobi
+<IfModule mod_env>
+  SetEnv TZ Africa/Nairobi
+</IfModule>
+
+# cPanel-generated PHP handler, do not edit
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
