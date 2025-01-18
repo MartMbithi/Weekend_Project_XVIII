@@ -114,6 +114,11 @@ while ($settings = $res->fetch_object()) {
                                 <span class="nk-menu-text"> <em class="icon ni ni-home"></em> Home</span>
                             </a>
                         </li>
+                        <li class="nk-menu-item">
+                            <a href="prescriptions?store=<?php echo $settings->user_store_id; ?>" class="nk-menu-link">
+                                <span class="nk-menu-text"> <em class="icon ni ni-cc-new"></em> Prescriptions</span>
+                            </a>
+                        </li>
                         <?php
                         /* Pop User Permissions */
                         $ret = "SELECT * FROM  user_permissions ";
@@ -139,7 +144,7 @@ while ($settings = $res->fetch_object()) {
                             if ($permissions->permission_module == 'Stocks Management') { ?>
                                 <li class="nk-menu-item">
                                     <a href="inventory_manage?store=<?php echo $settings->user_store_id; ?>" class="nk-menu-link">
-                                        <span class="nk-menu-text"> <em class="icon ni ni-inbox-fill"></em>Inventory & Stock</span>
+                                        <span class="nk-menu-text"> <em class="icon ni ni-inbox-fill"></em>Inventory </span>
                                     </a>
                                 </li>
                         <?php
