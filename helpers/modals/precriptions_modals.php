@@ -14,7 +14,7 @@
                     <strong>Patient Email:</strong> <?php echo $prescriptions->pres_patient_email; ?><br>
                     <strong>Patient Phone:</strong> <?php echo $prescriptions->pres_patient_phoneno; ?><br>
                     <strong>Prescription:</strong> <?php echo $prescriptions->pres_details; ?><br>
-                    <strong>Prescription Date:</strong> <?php echo $prescriptions->pres_date; ?><br>
+                    <strong>Prescription Date:</strong> <?php echo date('d M Y g:ia', strtotime($prescriptions->pres_date)); ?><br>
                 </p>
                 <!-- Add Print Button -->
                 <div class="text-right">

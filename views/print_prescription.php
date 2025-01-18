@@ -78,8 +78,10 @@ $dompdf = new Dompdf();
 
 
 $ret = "SELECT * FROM store_settings 
-JOIN prescriptions 
-WHERE store_status  = 'active' AND pres_id = '{$_GET['print']}'";
+JOIN prescriptions p
+INNER JOIN users u ON u.user_id = p.pres_doctor_id
+WHERE store_status  = 'active' 
+AND p.pres_id = '{$_GET['print']}'";
 $stmt = $mysqli->prepare($ret);
 $stmt->execute(); //ok
 $res = $stmt->get_result();
@@ -183,7 +185,16 @@ while ($stores = $res->fetch_object()) {
                 <hr style="width:100%" , color=black>
                 <h5>Prescription Report </h5>
             </div>
-            
+            <p>
+                <strong>Patient Name:</strong>' . $stores->pres_patient_name . '<br>
+                <strong>Patient Email:</strong>' . $stores->pres_patient_email . '<br>
+                <strong>Patient Phone:</strong>' . $stores->pres_patient_phoneno . '<br>
+                <strong>Doctor Name:</strong>' . $stores->user_name . '<br>
+                <strong>Doctor Email:</strong>' . $stores->user_email . '<br>
+                <strong>Doctor Phone:</strong>' . $stores->user_phoneno . '<br><br><br>
+                <strong>Prescription:</strong>' . $stores->pres_details . '<br><br><br>
+                <strong>Prescription Date:</strong>' . date('d M Y g:ia', strtotime($stores->pres_date)) . '<br>
+            </p>            
         </body>
     </html>
     ';
