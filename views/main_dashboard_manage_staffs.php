@@ -100,21 +100,13 @@ if (isset($_POST['add_user'])) {
         /* Log This Operation */
         include('../functions/logs.php');
         /* Email User */
-        include('../mailers/add_new_user.php');
         /* Detect Connection First Then Send Mail */
-        switch (connection_status()) {
-            case CONNECTION_NORMAL:
-                if ($prepare && $mail->send()) {
-                    $success = "Account Created";
-                } else if ($prepare && CONNECTION_ABORTED && CONNECTION_TIMEOUT) {
-                    $info = "Account Created But Mailing Failed, Check Your Internet Connectivity.";
-                } else {
-                    $err = "Failed, Please Try Again";
-                }
-                break;
-            default:
-                $err = "Failed, Please Try Again";
-                break;
+        if ($prepare) {
+            $success = "Account Created";
+        } else if ($preparee) {
+            $success = "Account Created";
+        } else {
+            $err = "Failed, Please Try Again";
         }
     }
 }

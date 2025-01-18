@@ -75,7 +75,7 @@ while ($settings = $res->fetch_object()) {
     <div class="nk-footer">
         <div class="container-fluid">
             <div class="nk-footer-wrap">
-                <div class="nk-footer-copyright"> &copy; <?php echo date('Y'); ?>. <?php echo $settings->system_name; ?> A <a href="https://devlan.co.ke">Devlan Solutions LTD</a> Production
+                <div class="nk-footer-copyright"> &copy; <?php echo date('Y'); ?>. <?php echo $settings->system_name; ?>
                 </div>
             </div>
         </div>
