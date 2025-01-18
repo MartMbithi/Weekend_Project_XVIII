@@ -1,8 +1,10 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
- *
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
+ *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
  *
@@ -177,7 +179,7 @@ while ($stores = $res->fetch_object()) {
                                 <hr>
                                 <i><b>Report Generated On ' .
             date('d M Y') .
-            ', Dasati medical clinic POS. Powered By Devlan Solutions LTD ~ devlan.co.ke </b><i>
+            ', Pharmacy Information Management System </b><i>
                             </div>
                             
                             <div class="list_header" align="center">
@@ -516,7 +518,7 @@ while ($stores = $res->fetch_object()) {
                                 <hr>
                                 <i><b>Report Generated On ' .
             date('d M Y') .
-            ', NativeBeecare POS. Powered By Devlan Solutions LTD ~ devlan.co.ke </b><i>
+            ', Pharmacy Information Management System </b><i>
                             </div>
                             
                             <div class="list_header" align="center">

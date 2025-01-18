@@ -1,7 +1,9 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
  *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
@@ -75,7 +77,7 @@ while ($settings = $res->fetch_object()) {
         <div class="nk-sidebar-element nk-sidebar-head">
             <div class="nk-sidebar-brand">
                 <a href="home" class="logo-link nk-sidebar-logo text-light">
-                    <img class="logo-light logo-img" src="../public/images/point-of-sale.png" srcset="https://nativebeecare.co.ke/assets/img/logo/favicon.png 2x" alt="logo">
+                    <img class="logo-light logo-img" src="../public/images/point-of-sale.png" srcset="../public/images/point-of-sale.png 2x" alt="logo">
                     <?php echo $settings->system_name; ?>
                 </a>
             </div>

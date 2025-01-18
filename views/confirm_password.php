@@ -1,7 +1,9 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
  *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
@@ -109,7 +111,6 @@ require_once('../partials/head.php');
                     <div class="nk-block nk-block-middle nk-auth-body">
                         <div class="nk-block-head">
                             <div class="nk-block-head-content text-center">
-                                <img class="round" src="https://devlan.co.ke/assets/images/logo.png" alt="">
                                 <h5 class="nk-block-title"><br>Confirm Password</h5>
                                 <div class="nk-block-des">
                                     <p>Enter Your New Password & Confirm It To Access <?php echo $settings->system_name; ?>? </p>
@@ -144,9 +145,6 @@ require_once('../partials/head.php');
                         <div class="slider-init">
                             <div class="slider-item">
                                 <div class="nk-feature nk-feature-center">
-                                    <!--<div class="nk-feature-img">
-                                        <img class="round" src="https://nativebeecare.co.ke/assets/img/logo/logo-dark.png" alt="">
-                                    </div> -->
                                     <div class="nk-feature-content py-4 p-sm-5">
                                         <h4><?php echo $settings->system_name; ?></h4>
                                         <p><?php echo $settings->system_tagline; ?></p>

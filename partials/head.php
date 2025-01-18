@@ -1,7 +1,9 @@
 <?php
 /*
- *   Crafted On Mon Sep 16 2024
- *   By the one and only Martin Mbithi (martin@devlan.co.ke)
+ *   Crafted On Sat Jan 18 2025
+ *   From his finger tips, through his IDE to your deployment environment at full throttle with no bugs, loss of data,
+ *   fluctuations, signal interference, or doubt—it can only be
+ *   the legendary coding wizard, Martin Mbithi (martin@devlan.co.ke, www.martmbithi.github.io)
  *   
  *   www.devlan.co.ke
  *   hello@devlan.co.ke
@@ -63,6 +65,7 @@
  *
  */
 
+
 /* Load System Settings */
 $ret = "SELECT * FROM  system_settings";
 $stmt = $mysqli->prepare($ret);
@@ -77,28 +80,14 @@ while ($settings = $res->fetch_object()) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DASATI Medical Clinic POS provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
-    <meta name="keywords" content="DASATI Medical Clinic, POS, Medical POS, Clinic Management, Medical Solutions, Devlan Solutions LTD" />
+    <meta name="description" content="Pharmacy Information Management System provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
+    <meta name="keywords" content="Pharmacy Information Management System, Medical POS, Clinic Management, Medical Solutions, Devlan Solutions LTD" />
     <meta name="author" content="Devlan Solutions LTD" />
     
     <!-- Primary Meta Tags -->
-    <title>DASATI Medical Clinic POS - Powering Clinic Operations</title>
-    <meta name="title" content="DASATI Medical Clinic POS - Powering Clinic Operations" />
-    <meta name="description" content="DASATI Medical Clinic POS provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dasaticlinicpos.co.ke/" />
-    <meta property="og:title" content="DASATI Medical Clinic POS - Powering Clinic Operations" />
-    <meta property="og:description" content="DASATI Medical Clinic POS provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
-    <meta property="og:image" content="../public/images/favicon_io/favicon.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://dasaticlinicpos.co.ke/" />
-    <meta property="twitter:title" content="DASATI Medical Clinic POS - Powering Clinic Operations" />
-    <meta property="twitter:description" content="DASATI Medical Clinic POS provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
-    <meta property="twitter:image" content="../public/images/favicon_io/favicon.png" />
+    <title>Pharmacy Information Management System - Powering Clinic Operations</title>
+    <meta name="title" content="Pharmacy Information Management System - Powering Clinic Operations" />
+    <meta name="description" content="Pharmacy Information Management System provides advanced point-of-sale solutions tailored for medical clinics. Streamline your operations with our innovative technology." />
 
     <!-- Favicons and Manifest -->
     <link rel="apple-touch-icon" sizes="180x180" href="../public/images/favicon_io/apple-touch-icon.png">
